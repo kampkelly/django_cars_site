@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+footer .footer-copyright a {
+    padding-right: 10px;
+ }
