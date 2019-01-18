@@ -1,0 +1,38 @@
+{% extends 'cars/layouts/master.html' %}
+
+{% block main_content %}
+  <h4 class="center">Add a car</h4>
+  <div class="row">
+    {% if error_message %} <h5 class="red-text">{{error_message}}</h5> {% endif %}
+    <form class="col s12" action={% url "cars:save_car" %} method="post">
+      {% csrf_token %}
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="name" type="text" name="name">
+          <label for="name">Car name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="year" type="number" name="year">
+          <label for="year">Year</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="colour" type="text" name="colour">
+          <label for="colour">Colour</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="model" type="text" name="model">
+          <label for="model">Model</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light indigo" type="submit" name="submit">Save Car</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
