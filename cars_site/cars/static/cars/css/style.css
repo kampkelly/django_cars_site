@@ -9,11 +9,27 @@ main {
 }
 
 footer {
-  position: absolute;
   width: 100%;
-  bottom: 0px;
+  margin-top: 20px;
 }
 
 footer .footer-copyright a {
     padding-right: 10px;
+ }
+
+ .all_cars {
+    min-height: 100vh;
+ }
+
+ .all_cars .row .col ul li {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 1%;
+ }
+
+ @media only screen and (min-width: 700px) {
+    .all_cars .row .col ul {
+        width: 50%;
+        margin: auto;
+     }
  }

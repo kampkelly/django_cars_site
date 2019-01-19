@@ -3,7 +3,7 @@
     <a href="#" class="brand-logo center">Django Cars Site</a>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li><a href={% url "cars:create_car" %}>Add Car</a></li>
-      <li><a href="#">Cars</a></li>
+      <li><a href={% url "cars:all_cars" %}>Cars</a></li>
       <li><a href="#">Users</a></li>
     </ul>
   </div>
