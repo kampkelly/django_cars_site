@@ -1,0 +1,12 @@
+{% extends 'cars/layouts/master.html' %}
+
+{% block main_content %}
+  <div class="container view_car center">
+    <h5>About {{car.name}}</h5>
+    <p>Name: {{car.name}} <br>
+    Model: {{car.model}} <br>
+    Colour: {{car.colour}} <br>
+    Year: {{car.year}}</p>
+  </div>
+
+{% endblock %}

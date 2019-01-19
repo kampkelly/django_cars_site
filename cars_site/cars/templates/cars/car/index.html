@@ -9,7 +9,7 @@
             {% for car in cars %}
                 <li class="collection-item avatar orange darken-1">
                 <span class="title black-text">Name: {{car.name}}</span>
-                <a href="#" class="secondary-content indigo-text">View</a>
+                <a href={% url "cars:view_car" car.id %} class="secondary-content indigo-text">View</a>
                 <p class="white-text">model: {{car.model}} <br>
                     colour: {{car.colour}}, year: {{car.year}}
                 </p>

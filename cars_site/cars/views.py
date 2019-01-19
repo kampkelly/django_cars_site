@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Car
 from .helpers.decorators.car_validator import check_for_empty_fields
@@ -28,3 +28,8 @@ def save_car(request):
 def all_cars(request):
     cars = Car.objects.order_by('id')
     return render(request, 'cars/car/index.html', {'cars': cars})
+
+
+def view_car(request, id):
+    car = get_object_or_404(Car, pk=id)
+    return render(request, 'cars/car/view.html', {'car': car})
