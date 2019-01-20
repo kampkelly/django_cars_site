@@ -2,11 +2,13 @@
 
 {% block main_content %}
   <div class="container view_car center">
+    {% if success_message %} <h5 class="green-text">{{success_message}}</h5> {% endif %}
     <h5>About {{car.name}}</h5>
     <p>Name: {{car.name}} <br>
     Model: {{car.model}} <br>
     Colour: {{car.colour}} <br>
     Year: {{car.year}}</p>
+    <a href={% url "cars:edit_car" car.id %}>Edit car</a>
   </div>
 
 {% endblock %}
