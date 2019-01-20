@@ -22,7 +22,7 @@ def save_car(request):
         car.save()
     except:
         return render(request, 'cars/car/create.html', {'error_message': 'There was an error saving the car details!'})
-    return render(request, 'cars/index.html', {})
+    return render(request, 'cars/car/view.html', {'car': car, 'success_message': 'Car has been added!'})
 
 
 def all_cars(request):
@@ -33,3 +33,21 @@ def all_cars(request):
 def view_car(request, id):
     car = get_object_or_404(Car, pk=id)
     return render(request, 'cars/car/view.html', {'car': car})
+
+def edit_car(request, id):
+    car = get_object_or_404(Car, pk=id)
+    return render(request, 'cars/car/edit.html', {'car': car})
+
+
+@check_for_empty_fields
+def update_car(request, id):
+    car = get_object_or_404(Car, pk=id)
+    car.name = request.POST['name'] if request.POST['name'] != '' else car.name
+    car.model = request.POST['model'] if request.POST['model'] else car.model
+    car.colour = request.POST['colour'] if request.POST['colour'] else car.colour
+    car.year = request.POST['year'] if request.POST['year'] else car.year
+    try:
+        car.save()
+    except:
+        return render(request, 'cars/car/edit.html', {'error_message': 'There was an error updating the car details!', 'car': car})
+    return render(request, 'cars/car/view.html', {'car': car, 'success_message': 'Car was updated successfully!'})
