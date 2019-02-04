@@ -11,5 +11,6 @@ urlpatterns = [
     path('cars/all', views.all_cars, name='all_cars'),
     path('cars/get/<id>', views.view_car, name='view_car'),
     path('cars/edit/<id>', views.edit_car, name='edit_car'),
-    path('cars/update/<id>', views.update_car, name='update_car')
+    path('cars/update/<id>', views.update_car, name='update_car'),
+    path('cars/delete/<id>', views.delete_car, name='delete_car')
 ]

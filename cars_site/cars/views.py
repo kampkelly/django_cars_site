@@ -51,3 +51,13 @@ def update_car(request, id):
     except:
         return render(request, 'cars/car/edit.html', {'error_message': 'There was an error updating the car details!', 'car': car})
     return render(request, 'cars/car/view.html', {'car': car, 'success_message': 'Car was updated successfully!'})
+
+
+def delete_car(request, id):
+    car = get_object_or_404(Car, pk=id)
+    try:
+        car.delete()
+    except:
+        return render(request, 'cars/car/view.html', {'error_message': 'The car could not be deleted!', 'car': car})
+    cars = Car.objects.order_by('id')
+    return render(request, 'cars/car/index.html', {'cars': cars, 'success_message': 'Car was deleted successfully!'})
