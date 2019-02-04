@@ -8,7 +8,8 @@
     Model: {{car.model}} <br>
     Colour: {{car.colour}} <br>
     Year: {{car.year}}</p>
-    <a href={% url "cars:edit_car" car.id %}>Edit car</a>
+    <a href={% url "cars:edit_car" car.id %}>Edit car</a> <br>
+    <a href={% url "cars:delete_car" car.id %} class="red-text">Delete car</a>
   </div>
 
 {% endblock %}
