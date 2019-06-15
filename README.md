@@ -1,5 +1,5 @@
 # django_cars_site
-A website about cars built with django
+A django site about cars
 
 ## Instructions
 - Clone the project.
